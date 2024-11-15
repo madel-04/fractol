@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:50:20 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/15 11:48:31 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/15 12:09:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,24 @@
 #define HEIGHT 800
 
 // *** COLORS ***
-// Colors in RGB format
-#define COLOR_BLACK     0x000000  // Black: RGB(0, 0, 0)
-#define COLOR_WHITE     0xFFFFFF  // White: RGB(255, 255, 255)
-#define COLOR_RED       0xFF0000  // Red: RGB(255, 0, 0)
-#define COLOR_GREEN     0x00FF00  // Green: RGB(0, 255, 0)
-#define COLOR_BLUE      0x0000FF  // Blue: RGB(0, 0, 255)
-#define COLOR_YELLOW    0xFFFF00  // Yellow: RGB(255, 255, 0)
-#define COLOR_CYAN      0x00FFFF  // Cyan: RGB(0, 255, 255)
-#define COLOR_MAGENTA   0xFF00FF  // Magenta: RGB(255, 0, 255)
-#define COLOR_ORANGE    0xFFA500  // Orange: RGB(255, 165, 0)
-#define COLOR_PURPLE    0x800080  // Purple: RGB(128, 0, 128)
-#define COLOR_GRAY      0x808080  // Gray: RGB(128, 128, 128)
-#define COLOR_DARK_GRAY 0x404040  // Dark Gray: RGB(64, 64, 64)
-#define COLOR_LIGHT_GRAY 0xD3D3D3 // Light Gray: RGB(211, 211, 211)
+#define BLACK       0x000000  // RGB(0, 0, 0)
+#define WHITE       0xFFFFFF  // RGB(255, 255, 255)
+#define PASTEL_PINK         0xFFD1DC  // RGB(255, 209, 220)
+#define LIGHT_CORAL         0xF08080  // RGB(240, 128, 128)
+#define LIGHT_PEACH         0xFFDAB9  // RGB(255, 218, 185)
+#define PALE_PINK           0xFADADD  // RGB(250, 218, 221)
+#define PEACH               0xFFDAB9  // RGB(255, 218, 185)
+#define PASTEL_YELLOW       0xFFFF99  // RGB(255, 255, 153)
+#define LAVENDER_BLUSH      0xFFF0F5  // RGB(255, 240, 245)
+#define LIGHT_LILAC         0xC8A2C8  // RGB(200, 162, 200)
+#define CREAM               0xFFF5E1  // RGB(255, 245, 225)
+#define MINT_GREEN          0x98FF98  // RGB(152, 255, 152)
+#define PALE_TURQUOISE      0xAFEEEE  // RGB(175, 238, 238)
+#define BABY_BLUE           0xBFEFFF  // RGB(191, 239, 255)
+#define POWDER_BLUE         0xB0E0E6  // RGB(176, 224, 230)
+#define LAVENDER            0xE6E6FA  // RGB(230, 230, 250)
+#define PASTEL_BLUE         0xBFEFFF  // RGB(191, 239, 255)
+
 
 typedef struct	s_img
 {
@@ -74,7 +78,7 @@ typedef struct	s_fractal
 }		t_fractal;
 
 // *** MATH_UTILS ***
-double map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+double map(double unscaled_num, double new_min, double new_max, double old_max);
 t_complex   sum_complex(t_complex z1, t_complex z2);
 t_complex   square_complex(t_complex z);
 
