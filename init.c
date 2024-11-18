@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:58:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/18 12:35:40 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/18 13:06:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ void	fractal_init(t_fractal *fractal)
 		malloc_error();
 	}
 	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr,
-			&fractal->img.bpp, &fractal->img.line_len,
+			&fractal->img.bpp,
+			&fractal->img.line_len,
 			&fractal->img.endian);
-	events_init(fractal);
-	data_init(fractal);
+	ft_double_init(fractal);
 }

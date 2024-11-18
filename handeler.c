@@ -42,7 +42,7 @@ int	key_handler(int keysym, t_fractal *fractal)
 }
 /*https://www.oreilly.com/library/view/xlib-reference-manual/9780937175262/16_appendix-h.html*/
 
-int	mouse_handler(int button, int x, int y, t_fractal *fractal)
+int	mouse_handler(int button, t_fractal *fractal)
 {
 	if (button == Button5)
 	{

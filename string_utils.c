@@ -6,11 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:50:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/18 12:48:21 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:51:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h" //CHECK
+#include "fractol.h"
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {
