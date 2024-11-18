@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:50:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/07 13:15:00 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:48:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	}
 	return (*s1 - *s2);
 }
+/* SI son iguales devuelve 0!!*/
 
 void	putstr_fd(char *s, int fd)
 {
@@ -63,3 +64,6 @@ double	atodbl(char *s)
 	}
 	return ((integer_part + fractional_part) * sign);
 }
+/*
+Para pasar del char a ub double, como atoi.
+*/

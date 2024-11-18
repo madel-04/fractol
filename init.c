@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:58:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/18 12:32:51 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:35:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ static void	events_init(t_fractal *fractal)
 		julia_track,
 		fractal);
 }
+/*
+Hooking is used for many purposes. Examples might include intercepting keyboard 
+or mouse event messages before they reach an application, or intercepting operating system 
+calls in order to monitor behavior or modify the function of an application or another component.
+https://harm-smits.github.io/42docs/libs/minilibx/hooks.html
+*/
 
 static void	ft_double_init(t_fractal *fractal)
 {
