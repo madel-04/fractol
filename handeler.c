@@ -40,25 +40,25 @@ int	key_handler(int keysym, t_fractal *fractal)
 	fractal_render(fractal);
 	return (0);
 }
-
+/*https://www.oreilly.com/library/view/xlib-reference-manual/9780937175262/16_appendix-h.html*/
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
-	//Zoom in
 	if (button == Button5)
 	{
 		fractal->zoom *= 0.95;
 	}
-	//Zoom out
 	else if (button == Button4)
 	{
 		fractal->zoom *= 1.05;
 	}
-	// refresh
 	fractal_render(fractal);
 	return 0;
 }
-
+/*
+Teclas para hacer zoom, Button5 y 4 son la ruedecilla del mouse,
+el resto son para moverte o para cambiar los colores
+*/
 
 int	julia_track(int x, int y, t_fractal *fractal)
 {
@@ -72,3 +72,5 @@ int	julia_track(int x, int y, t_fractal *fractal)
 	}
 	return (0);
 }
+/*Para que el fractal se mueva con el mouse actualizando las coordenadas de x e y
+*/

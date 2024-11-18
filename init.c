@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:58:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/15 11:36:29 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:32:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * If MALLOC goes bad (improbable)
-*/
 static void	malloc_error(void)
 {
 	perror("Problems with malloc");
@@ -86,8 +83,7 @@ void	fractal_init(t_fractal *fractal)
 		malloc_error();
 	}
 	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr,
-			&fractal->img.bpp,
-			&fractal->img.line_len,
+			&fractal->img.bpp, &fractal->img.line_len,
 			&fractal->img.endian);
 	events_init(fractal);
 	data_init(fractal);
