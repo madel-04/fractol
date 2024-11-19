@@ -17,7 +17,7 @@ CFLAGS		= -Wall -Wextra -Werror
 NAME		= fractol 
 LIB_NAME	= fractol.a
 
-MLX = -lmlx -framework OpenGL -framework AppKit
+MLX 		= -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 
 SRC			= handeler.c \
 			  init.c \
@@ -29,18 +29,14 @@ SRC			= handeler.c \
 OBJ			= $(SRC:%.c=%.o)
 #Para generar los archivos objetos de una lista fuente SRCS
 
-
 INCLUDE		= fractol.h
 
 all: $(NAME)
 #Define el target/objetivo y especifica que depende de NAME
 #Si el archivo no existe o no está actualizado se ejecutan las reglas para obtenerlo
 
-$(LIB_NAME): $(OBJ)
-		$(LIB) $(LIB_NAME) $(OBJ) $(MLX)
-
-$(NAME): $(LIB_NAME)
-		$(CC) $(CFLAGS) $(OBJ)
+$(NAME): $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) $(MLX) -o $(NAME)
 # gcc $(FLAGS) -c $(SRCS) -I ./ 
 #Para compilar con las flags en el directorio actual, la I (Include directory) busca archivos de cabecera
 #en el directorio indicado. Los archivos fuentes .c con la cabecera propia (libft.h), si el .h está en el
@@ -61,7 +57,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(LIB_NAME)
 
 #Ejecuta primero el clean para eliminar los archivos objetos y luego la libreria .a y
 # y vuelve a compilar los archivos generales 
