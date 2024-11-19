@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: madel-va <madel-va@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:50:20 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/19 11:08:39 by madel-va         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:00:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void			fractal_render(t_fractal *fractal);
 void			fractal_init(t_fractal *fractal);
 
 // *** HANDLER ***
-int				mouse_handler(int button, t_fractal *fractal);
+int				mouse_handler(int button, int x, int y, t_fractal *fractal);
 int				key_handler(int keysym, t_fractal *fractal);
 // Clean-up;
 int				close_handler(t_fractal *fractal);

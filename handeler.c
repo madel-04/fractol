@@ -43,8 +43,10 @@ int	key_handler(int keysym, t_fractal *fractal)
 /*https://www.oreilly.com/library/view/xlib-reference-
 manual/9780937175262/16_appendix-h.html*/
 
-int	mouse_handler(int button, t_fractal *fractal)
+int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
+	if (!fractal) // Verifica si fractal es NULL
+		return (0);
 	if (button == Button5)
 	{
 		fractal->zoom *= 0.95;
@@ -54,6 +56,7 @@ int	mouse_handler(int button, t_fractal *fractal)
 		fractal->zoom *= 1.05;
 	}
 	fractal_render(fractal);
+	x = x + y;
 	return (0);
 }
 /*

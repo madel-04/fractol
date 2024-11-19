@@ -14,6 +14,11 @@
 
 double	map(double unscaled_num, double new_min, double new_max, double old_max)
 {
+	if (old_max == 0)
+	{
+		fprintf(stderr, "Error: División por cero en map\n");
+		exit(EXIT_FAILURE);
+	}
 	return ((new_max - new_min) * (unscaled_num - 0)
 		/ (old_max - 0) + new_min);
 }
