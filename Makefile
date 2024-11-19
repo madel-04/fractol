@@ -14,7 +14,8 @@ LIB			= ar rcs
 RM			= rm -f
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-NAME		= fractol.a
+NAME		= fractol 
+LIB_NAME	= fractol.a
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
@@ -35,9 +36,11 @@ all: $(NAME)
 #Define el target/objetivo y especifica que depende de NAME
 #Si el archivo no existe o no está actualizado se ejecutan las reglas para obtenerlo
 
-$(NAME): $(OBJ) $(INCLUDE)
-		$(LIB) $(NAME) $(OBJ) $(MLX)
+$(LIB_NAME): $(OBJ)
+		$(LIB) $(LIB_NAME) $(OBJ) $(MLX)
 
+$(NAME): $(LIB_NAME)
+		$(CC) $(CFLAGS) $(OBJ)
 # gcc $(FLAGS) -c $(SRCS) -I ./ 
 #Para compilar con las flags en el directorio actual, la I (Include directory) busca archivos de cabecera
 #en el directorio indicado. Los archivos fuentes .c con la cabecera propia (libft.h), si el .h está en el
@@ -59,6 +62,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+
 #Ejecuta primero el clean para eliminar los archivos objetos y luego la libreria .a y
 # y vuelve a compilar los archivos generales 
 

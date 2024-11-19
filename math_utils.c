@@ -12,14 +12,14 @@
 
 #include "fractol.h"
 
-double map(double unscaled_num, double new_min, double new_max, double old_max)
-
+double	map(double unscaled_num, double new_min, double new_max, double old_max)
 {
 	return ((new_max - new_min) * (unscaled_num - 0)
 		/ (old_max - 0) + new_min);
 }
 /*
-Escala un número desde un rango original (0 a old_max) a un nuevo rango (new_min a new_max).
+Escala un número desde un rango original (0 a old_max) a un nuevo 
+rango (new_min a new_max).
 */
 
 t_complex	sum_complex(t_complex z1, t_complex z2)
