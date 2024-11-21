@@ -56,7 +56,8 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 		fractal->zoom *= 1.05;
 	}
 	fractal_render(fractal);
-	x = x + y;
+	x = x;
+	y = y;
 	return (0);
 }
 /*

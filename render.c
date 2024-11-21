@@ -25,6 +25,24 @@ static void	my_pixel_put(int x, int y, t_img *img, int color)
 Dibuja un píxel en una posición específica dentro de la imagen con un color dado.
 Escribe el color en la posición calculada usando un puntero al buffer 
 de píxeles (img->pixels_ptr).
+
+para determinar el inicio de la línea y en la memoria, debemos multiplicar el número de
+la línea y por la longitud de la línea en bytes (line_len). Esto nos da la posición
+en memoria al comienzo de esa fila. La imagen en memoria está organizada de manera que
+cada línea de píxeles ocupa un bloque contiguo de memoria. El valor line_len representa
+el número de bytes que ocupa una línea completa de la imagen, que no necesariamente es
+igual al número de píxeles en la línea, ya que puede haber relleno (padding) para hacer
+que la longitud de la línea sea un múltiplo de 4 bytes.
+
+offset = desplazamiento en la memoria de los píxeles de la imagen donde se debe colocar el color
+
+img->pixels_ptr: Es un puntero a la memoria donde se almacenan los píxeles de la imagen.
+Al agregarle el offset, obtenemos la dirección de memoria exacta donde se debe escribir 
+el color del píxel.
+
+(unsigned int *): Este cast convierte el puntero a un tipo de puntero de 4 bytes
+(asumiendo que el color se representa en 32 bits, o 4 bytes, como en el caso de imágenes
+con colores RGB de 8 bits por componente).
 */
 
 static void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal)

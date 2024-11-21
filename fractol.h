@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:50:20 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/19 13:00:08 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/21 10:14:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,33 @@ typedef struct s_img
 	int		endian;
 	int		line_len;
 }			t_img;
+/*
+El endianness determina el orden en que los bytes de un dato 
+(como un número o un color) se almacenan en la memoria.
+Big-endian: Los bytes más significativos (los "más importantes") se 
+almacenan primero (en la dirección de memoria más baja).
+Little-endian: Los bytes menos significativos se almacenan primero.
+
+Big-endian (orden "natural"):
+Se guarda en memoria desde el más significativo (a la izquierda) al 
+menos significativo:
+
+Dirección	Contenido
+0x00	0x12
+0x01	0x34
+0x02	0x56
+0x03	0x78
+
+Little-endian (orden "revertido"):
+Se guarda en memoria desde el menos significativo (a la derecha) al 
+más significativo:
+
+Dirección	Contenido
+0x00	0x78
+0x01	0x56
+0x02	0x34
+0x03	0x12
+*/
 
 typedef struct s_complex
 {
